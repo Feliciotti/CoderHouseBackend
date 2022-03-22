@@ -1,28 +1,41 @@
+// Clase contenedor a ser importada
+
 class Contenedor {
-    constructor(){
-        this.products = []
+    constructor(products){
+        this.products = products
     };
 
-    save(product, price, id) {
-        this.products.push({product: product,
-                            price: price,
-                            id: id});
-    };
-
-    getById(id){
-        const productById = this.products.find(function (product) {
-            return product.id == id;
-        });
-        return productById
-    };
-    
-    async getAll() {
+    getAll() {
         return this.products
     };
 
 };
 
-const p = new Contenedor();
-p.save('producto 1', '30000', '1')
+//Ejemplo
 
-module.exports = Contenedor;
+class User {
+    constructor(name, age, datos) {
+      this.name = name;
+      this.age = age;
+      this.datos = datos;
+    }
+  
+    getUserStats() {
+        const DatosParsed = JSON.parse(JSON.stringify(this.datos));
+        
+        return DatosParsed
+//         const productsParsed = JSON.parse(products);        
+//         const productById = productsParsed.find(function (product) {
+
+//             fs.promises.writeFile(this.ruta, JSON.stringify([], null, 2))
+
+    }
+  }
+  
+console.log("Hola Modd")
+
+const mytest = "variable de prueba"
+
+// Exportamos el modulo
+module.exports = Contenedor
+module.exports = User
