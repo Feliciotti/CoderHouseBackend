@@ -10,10 +10,10 @@ const server = app.listen(PORT, () => {
 server.on("error", error => console.log(`Error en el servidor ${error}`));
 
 // Constante productos que respeta el nombre con el que fue exportada, de tener otro nombre no funciona
-const productos = require('./ej.js');
+const productos = require('../ej.js');
 
 //Objecto creado en base a la class constructor productos que importamos
-const lista = new productos([{"title": "producto2","price": 500,"id": 1},{"title": "producto3","price": 600,"id": 2},{"title": "producto4","price": 1000,"id": 3}]);
+const lista = new productos("./products.txt");
 
 // Metodos Express
 app.get('/products', (req, res) => {
